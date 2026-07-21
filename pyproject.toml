@@ -1,0 +1,75 @@
+[project]
+name = "UniDec"
+dynamic = ["version"]
+description = "Universal deconvolution of mass and ion mobility spectra."
+authors = [
+	{name = "Michael Marty", email="mtmarty@utexas.edu"},
+]
+readme = "readme.md"
+requires-python = "<=3.10"
+license = "modified-bsd"
+classifiers = [
+	"Intended Audience :: Scientists",
+	"Programming Language :: Python :: 3",
+]
+dependencies = [
+	'attrdict',
+	'attrdict3',
+	'contourpy',
+	'cycler',
+	'fonttools',
+	'h5py',
+	'Jinja2',
+	'kiwisolver',
+	'llvmlite',
+	'lxml',
+	'lxml_html_clean',
+	'MarkupSafe',
+	'matplotlib',
+	'mpld3',
+	'natsort',
+	'networkx',
+	'numba',
+	'numpy',
+	'packaging',
+	'pandas',
+	'pillow',
+	'plotly',
+	'pubsub',
+	'pymzml',
+	'pyparsing',
+	'Pypubsub',
+	'pyteomics',
+	'python-dateutil',
+	'pytz',
+	'regex',
+	'scipy',
+	'setuptools',
+	'six',
+	'tenacity',
+	'tzdata',
+	'wxPython',
+]
+
+[project.gui-scripts]
+gunidec = "unidec:Launcher.py"
+
+[project.scripts]
+unidec = "engine.py"
+metaunidec = "MetaUniDec.py"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.package-dir]
+unidec = "unidec"
+
+[tool.uv.sources]
+unidec = { workspace = true }
+
+[tool.uv.workspace]
+members = [
+    ".",
+    ".",
+]
