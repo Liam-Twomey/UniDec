@@ -46,6 +46,7 @@ dependencies = [
 	'Pypubsub',
 	'pyteomics',
 	'python-dateutil',
+	'pythonnet; os_name == "nt"',
 	'pytz',
 	'regex',
 	'scipy',
