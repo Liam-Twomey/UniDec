@@ -32,6 +32,7 @@ distpypi
 
 unidec/src/x64/
 unidec/src/.vs/
+unidec/bin/unideclinux
 
 *recent.txt
 *Mass_Defect*.txt
