@@ -56,19 +56,22 @@ dependencies = [
 	'wxPython',
 ]
 
+[project.optional-dependencies]
+img = ['pyimzml']
+
+
+[tool.setuptools.package-dir]
+unidec = "unidec"
+
 [project.gui-scripts]
-gunidec = "unidec:Launcher.py"
+gunidec = "unidec.Launcher:__main__"
 
 [project.scripts]
-unidec = "engine.py"
-metaunidec = "MetaUniDec.py"
+unidec = "unidec.engine:__main__"
 
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
-
-[tool.setuptools.package-dir]
-unidec = "unidec"
 
 [tool.uv.sources]
 unidec = { workspace = true }
