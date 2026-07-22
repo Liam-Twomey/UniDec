@@ -1,7 +1,7 @@
 [project]
 name = "UniDec"
-dynamic = ["version"]
 description = "Universal deconvolution of mass and ion mobility spectra."
+version = "6.1.3"
 authors = [
 	{name = "Michael Marty", email="mtmarty@utexas.edu"},
 ]
