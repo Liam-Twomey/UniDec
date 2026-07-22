@@ -24,32 +24,38 @@ then click the GUI_UniDec.exe file in the folder to launch.
 
 To use the PDF report generator, install [MikTex](https://miktex.org) and select install packages automatically from the installation options. You may need to add this to your system path so that PDFLatex is found from the command line. 
 
-### Linux Install
+### Package manager install (all platforms)
+
+#### `uv` method
+
+To install with the [uv](docs.astral.sh/uv/) package manager, first install UV, then
+
+    uv tool install git+https://github.com/Liam-Twomey/UniDec.git
+
+
+#### `pip` method
 
 To install on linux start with making a virtual environment. 
 
-    virtualenv env
+    python -m venv venv
 	
-Then clone this repo with `git clone ....`
+Then clone this repo with `git clone https://github.com/Liam-Twomey/UniDec.git`
 
 With your directory tree looking like:
 
 	./
-    env/
+    venv/
 	UniDec/
 
-Then install the dependencies:
+Then install the package:
 
-    pip install -r UniDec/requirements.txt
+    pip install ./UniDec/
 
-Then install UniDec as a dependency from the git repository you downloaded:
-
-	pip install -e UniDec/
-	
 Then you can run the launcher
 
     python -m unidec.Launcher
 
+This also allows calling the program from the system command line, so `unidec <args>` will run the unidec command line program, and `gunidec` will open the unidec GUI.
 
 ## Tutorial
 
