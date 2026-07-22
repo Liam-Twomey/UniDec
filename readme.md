@@ -13,6 +13,8 @@ Please contact mtmarty@email.arizona.edu for questions, suggestions, or with any
 
 ## Installation
 
+### Binary download 
+
 UniDec may be downloaded from [https://github.com/michaelmarty/UniDec/releases](https://github.com/michaelmarty/UniDec/releases).
 
 This compiled version is compatible with 64-bit Windows. It a portable binary, so it does not need a conventional installation.
@@ -24,24 +26,17 @@ then click the GUI_UniDec.exe file in the folder to launch.
 
 To use the PDF report generator, install [MikTex](https://miktex.org) and select install packages automatically from the installation options. You may need to add this to your system path so that PDFLatex is found from the command line. 
 
-### Package manager install (all platforms)
+### Pip install
 
-#### `uv` method
-
-To install with the [uv](docs.astral.sh/uv/) package manager, first install UV, then
-
-    uv tool install git+https://github.com/Liam-Twomey/UniDec.git
-
-
-#### `pip` method
-
-To install on linux start with making a virtual environment. 
+Unidec can also be installed via the pip package manager.
+Start by `cd`ing to the directory where you want UniDec to be stored,
+and making a virtual environment: 
 
     python -m venv venv
 	
 Then clone this repo with `git clone https://github.com/Liam-Twomey/UniDec.git`
 
-With your directory tree looking like:
+This will result in a directory (visible with `ls`) looking like:
 
 	./
     venv/
@@ -51,11 +46,35 @@ Then install the package:
 
     pip install ./UniDec/
 
-Then you can run the launcher
+Then you can run the launcher:
 
     python -m unidec.Launcher
 
 This also allows calling the program from the system command line, so `unidec <args>` will run the unidec command line program, and `gunidec` will open the unidec GUI.
+
+### Linux install
+
+On linux, you need to deal with compiling the UniDec engine, and getting
+`wxPython` installed.
+
+1. `cd UniDec/unidec/source` to get to the source directory of the UniDec engine.
+2. Follow the instructions at the top of `./linux_<package manager>_deps.txt` to
+install the dependencies for your package manager. If your package manager isn't
+listed, you'll need to figure out which packages provide these libraries.
+3. `chmod u+x ./compilelinux.sh` to allow execution of the compilation script.
+4. `./compilelinux.sh` to build the UniDec binary.
+
+If the `wxpython` dependency was installed correctly in step 1, then you should now be able to make a virtual envionment which passes this installation through:
+
+	pip -m venv venv --system-site-packages
+
+Then, proceed with the Pip install as shown above.
+
+There are a couple of known issues with the GTK UI:
+
+- The window does not open with the same proportions as on Windows, but this
+can be adjusted once it's open.
+- Mouse drags to zoom into plots aren't registered correctly under Wayland.
 
 ## Tutorial
 
