@@ -8,6 +8,11 @@ authors = [
 readme = "readme.md"
 requires-python = "<=3.10"
 license = "BSD-4-Clause"
+license-files =	[
+	"LICENSE",
+	"unidec/UniDecImporter/Waters/Waters_MassLynxSDK_EULA.txt",
+	"unidec/UniDecImporter/Thermo/RawFileReaderLicense.doc",
+]
 classifiers = [
 	"Intended Audience :: Scientists",
 	"Programming Language :: Python :: 3",
