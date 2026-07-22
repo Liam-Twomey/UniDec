@@ -77,10 +77,12 @@ exp = ['massql']
 unidec = "unidec"
 
 [project.gui-scripts]
-gunidec = "unidec.Launcher:__main__"
+# define a command to open the unidec GUI
+gunidec = "unidec.Launcher:run_launcher"
 
 [project.scripts]
-unidec = "unidec.engine:__main__"
+# define a command to run unidec in the command line
+unidec = "unidec.engine:UniDec"
 
 [build-system]
 requires = ["setuptools"]
