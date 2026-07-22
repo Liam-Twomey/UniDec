@@ -6,7 +6,7 @@ authors = [
 	{name = "Michael Marty", email="mtmarty@utexas.edu"},
 ]
 readme = "readme.md"
-requires-python = ">=3.13"
+requires-python = ">=3.13" # version tested in 8.0.3
 license = "BSD-4-Clause"
 license-files =	[
 	"LICENSE",
@@ -18,50 +18,62 @@ classifiers = [
 	"Programming Language :: Python :: 3",
 ]
 dependencies = [
-	'attrdict',
-	'attrdict3',
-	'contourpy',
-	'cycler',
-	'fonttools',
-	'h5py',
-	'Jinja2',
-	'kiwisolver',
-	'llvmlite',
-	'lxml',
-	'lxml_html_clean',
-	'MarkupSafe',
-	'matplotlib',
-	'mpld3',
-	'natsort',
-	'networkx',
-	'numba',
-	'numpy>= 2.2.6',
-	'packaging',
-	'pandas',
-	'pillow',
-	'plotly >= 6.1.2',
-	'pubsub',
-	'pymzml',
-	'pyparsing',
-	'Pypubsub',
-	'pyteomics',
-	'python-dateutil',
-	'pythonnet; os_name == "nt"',
-	'pytz',
-	'regex',
-	'scipy',
-	'setuptools',
-	'six',
-	'tenacity',
-	'tzdata',
-	'wxPython',
+	# GUI
+	'wxPython',		# GUI library
+	# array processing
+	'numba',		# accelerated arrays
+	'numpy>= 2.2.6',	# base array lib
+	'pandas',		# Dataframes
+	'scipy',		# Scienfitic computing tools
+	# algorithms and compute facilities
+	'contourpy',		# calculate curve contours
+	'kiwisolver',		# Cassowary constraint solver
+	'networkx',		# graph generator
+	'pyparsing',		# grammatical parser
+	# File handling
+	'hdf5plugin',		# accelerates psims
+	'h5py',			# handle hdf5 files
+	'lxml',			# handle XML files
+	'lxml_html_clean',	# cleanup XML for use in HTML
+	'MarkupSafe',		# safe insertion of text into HTML
+	'mpld3',		# handle D3/json plot objects
+	'pymzml',		# handle mzml files
+	'pythonnet; os_name == "nt"', # install dotnet/dll compat for windows only
+	# Display
+	'cycler',		# aux to matplotlib
+	'fonttools',		# handle font files
+	'matplotlib',		# plotting
+	'plotly >= 6.1.2',	# plotting -> used when?
+	'pillow',		# Image processing
+	# Bio tools
+	'pyteomics',		#
+	# Python utilities
+	'attrdict', 		# attr access for python dicts
+	'attrdict3',		# attr access for python dicts
+	'Jinja2',		# templating engine
+	'python-dateutil',	# time/date handling
+	'pytz',			# timezone handling
+	'regex',		# alternative to stdlib 're'
+	'setuptools',		# build environment, not necessary for pyproject
+	'packaging',		# core utilities for pkg, not needed for pyproject
+	'six',			# python2 compatibility
+	'tzdata',		# Timezone data
+	'tenacity',		# retry functionality
+	# Misc
+	'llvmlite',		# compiler for Numba
+	'natsort',		# changes string sort order
+	'pubsub',		# ? seems to be MPI -> used
+	'Pypubsub',		# implements MPI -> not used
 ]
 
 [project.optional-dependencies]
+# install with <installer> install '.[opt-dependency group]'
 img = ['pyimzml']
-
+exp = ['massql']
 
 [tool.setuptools.package-dir]
+# define the subdirectory (from the parent directory containing this pyproject
+# file) to define as the root directory of the package.
 unidec = "unidec"
 
 [project.gui-scripts]
