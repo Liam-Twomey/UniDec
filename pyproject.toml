@@ -6,7 +6,7 @@ authors = [
 	{name = "Michael Marty", email="mtmarty@utexas.edu"},
 ]
 readme = "readme.md"
-requires-python = "<=3.10"
+requires-python = ">=3.13"
 license = "BSD-4-Clause"
 license-files =	[
 	"LICENSE",
@@ -35,11 +35,11 @@ dependencies = [
 	'natsort',
 	'networkx',
 	'numba',
-	'numpy',
+	'numpy>= 2.2.6',
 	'packaging',
 	'pandas',
 	'pillow',
-	'plotly',
+	'plotly >= 6.1.2',
 	'pubsub',
 	'pymzml',
 	'pyparsing',
