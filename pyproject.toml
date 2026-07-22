@@ -25,9 +25,9 @@ dependencies = [
 	'wxPython',		# GUI library
 	# array processing
 	'numba',		# accelerated arrays
-	'numpy>= 2.2.6',	# base array lib
+	'numpy >= 2.2.6',	# base array lib
 	'pandas',		# Dataframes
-	'scipy',		# Scienfitic computing tools
+	'scipy > =1.2',		# Scienfitic computing tools
 	# algorithms and compute facilities
 	'contourpy',		# calculate curve contours
 	'kiwisolver',		# Cassowary constraint solver
@@ -45,7 +45,7 @@ dependencies = [
 	# Display
 	'cycler',		# aux to matplotlib
 	'fonttools',		# handle font files
-	'matplotlib',		# plotting
+	'matplotlib >= 3.1',		# plotting
 	'plotly >= 6.1.2',	# plotting -> used when?
 	'pillow',		# Image processing
 	# Bio tools
