@@ -27,7 +27,7 @@ dependencies = [
 	'numba',		# accelerated arrays
 	'numpy >= 2.2.6',	# base array lib
 	'pandas',		# Dataframes
-	'scipy > =1.2',		# Scienfitic computing tools
+	'scipy >= 1.2',		# Scienfitic computing tools
 	# algorithms and compute facilities
 	'contourpy',		# calculate curve contours
 	'kiwisolver',		# Cassowary constraint solver
@@ -57,8 +57,8 @@ dependencies = [
 	'python-dateutil',	# time/date handling
 	'pytz',			# timezone handling
 	'regex',		# alternative to stdlib 're'
-	'setuptools',		# build environment, not necessary for pyproject
-	'packaging',		# core utilities for pkg, not needed for pyproject
+	#'setuptools',		# build environment, not necessary for pyproject
+	#'packaging',		# core utilities for pkg, not needed for pyproject
 	'six',			# python2 compatibility
 	'tzdata',		# Timezone data
 	'tenacity',		# retry functionality
