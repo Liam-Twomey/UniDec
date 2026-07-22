@@ -6,6 +6,7 @@ authors = [
 	{name = "Michael Marty", email="mtmarty@utexas.edu"},
 ]
 readme = "readme.md"
+keywords = ["UniDec", "Mass", "Spectrometry", "Deconvolution", "Ion", "Mobility"]
 requires-python = ">=3.13" # version tested in 8.0.3
 license = "BSD-4-Clause"
 license-files =	[
@@ -16,6 +17,8 @@ license-files =	[
 classifiers = [
 	"Intended Audience :: Scientists",
 	"Programming Language :: Python :: 3",
+	"Programming Language :: Python :: 3.13",
+	"Development Status :: 5 - Production/Stable",
 ]
 dependencies = [
 	# GUI
@@ -65,6 +68,9 @@ dependencies = [
 	'pubsub',		# ? seems to be MPI -> used
 	'Pypubsub',		# implements MPI -> not used
 ]
+[project.urls]
+Repository = "https://github.com/michaelmarty/UniDec"
+Issues = "https://github.com/michaelmarty/UniDec/issues"
 
 [project.optional-dependencies]
 # install with <installer> install '.[opt-dependency group]'
