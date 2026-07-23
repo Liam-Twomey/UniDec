@@ -34,7 +34,7 @@ and making a virtual environment:
 
     python -m venv venv
 	
-Then clone this repo with `git clone https://github.com/Liam-Twomey/UniDec.git`
+Then clone this repo with `git clone https://github.com/michaelmarty/UniDec.git`
 
 This will result in a directory (visible with `ls`) looking like:
 
@@ -55,10 +55,10 @@ will run the unidec command line program, and `gunidec` will open the unidec GUI
 
 ### Linux install
 
-On linux, you need to deal with compiling the UniDec engine, and getting
-`wxPython` installed.
+On linux, you need to deal with getting `wxPython` installed and available to UniDec
+before installing UniDec.
 
-1. `cd UniDec/unidec/source` to get to the source directory of the UniDec engine.
+1. `cd UniDec/unidec/src` to get to the source directory of the UniDec engine.
 2. Follow the instructions at the top of `./linux_<package manager>_deps.txt` to
 install the dependencies for your package manager. If your package manager isn't
 listed, you'll need to figure out which packages provide these libraries.
@@ -67,13 +67,17 @@ listed, you'll need to figure out which packages provide these libraries.
 	pip -m venv venv --system-site-packages
 
 If you're on an x86_64 machine and step 1 did not throw any errors, then you
-will likely be able to proceed with the Pip install as shown above. If running
-UniDec from within the GUI throws errors in the command line:
+will likely be able to proceed with the Pip install as shown above, as there
+is a compiled version of the UniDec engine binary in `unidec/bin/unideclinux`.
+If you are on an Arm or other non-x86_64 system, or if running UniDec from
+within the GUI throws errors (in the terminal window), you may need to recompile
+the UniDec engine:
 
-4. `chmod u+x ./compilelinux.sh` to allow execution of the compilation script.
-5. `./compilelinux.sh` to build the UniDec binary.
+    `./unidec/src/compilelinux.sh`
 
-There are a couple of known issues with the GTK UI:
+When UniDec is restarted, the engine should now be accessible.
+
+There are a couple of known issues with the GTK UI used under Linux:
 
 - The window does not open with the same proportions as on Windows, but this
 can be adjusted once it's open.
